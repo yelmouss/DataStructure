@@ -1,0 +1,73 @@
+Problem 1 Algorithm (Finding Sum of Distinct Elements from Two Sets Using Arrays):
+
+ALGORITHM findDistinctSum
+VARIABLES
+    set1: ARRAY OF INTEGER
+    set2: ARRAY OF INTEGER
+    distinct_elements: ARRAY OF INTEGER
+    distinct_sum: INTEGER
+BEGIN
+    distinct_elements ← []
+    distinct_sum ← 0
+    
+    FOR EACH element IN set1 DO
+        IF element NOT IN distinct_elements THEN
+            ADD element TO distinct_elements
+        END IF
+    END FOR
+    
+    FOR EACH element IN set2 DO
+        IF element NOT IN distinct_elements THEN
+            ADD element TO distinct_elements
+        END IF
+    END FOR
+    
+    FOR EACH element IN distinct_elements DO
+        distinct_sum ← distinct_sum + element
+    END FOR
+    
+    RETURN distinct_sum
+END
+
+
+
+ALGORITHM findDistinctSum
+
+VARIABLES
+
+set1: Un tableau d'entiers contenant le premier ensemble.
+set2: Un tableau d'entiers contenant le deuxième ensemble.
+distinct_elements: Un tableau d'entiers contenant les éléments distincts des deux ensembles.
+distinct_sum: Un entier pour stocker la somme des éléments distincts.
+BEGIN
+
+distinct_elements ← []: Initialise le tableau des éléments distincts comme vide.
+
+distinct_sum ← 0: Initialise la somme des éléments distincts à zéro.
+
+FOR EACH element IN set1 DO
+
+IF element NOT IN distinct_elements THEN
+ADD element TO distinct_elements: Ajoute l'élément au tableau des éléments distincts s'il n'est pas déjà présent.
+END IF
+END FOR
+
+FOR EACH element IN set2 DO
+
+IF element NOT IN distinct_elements THEN
+ADD element TO distinct_elements: Ajoute l'élément au tableau des éléments distincts s'il n'est pas déjà présent.
+END IF
+END FOR
+
+FOR EACH element IN distinct_elements DO
+
+distinct_sum ← distinct_sum + element: Ajoute l'élément à la somme des éléments distincts.
+END FOR
+
+RETURN distinct_sum: Renvoie la somme des éléments distincts des deux ensembles.
+
+END
+
+Cet algorithme prend deux ensembles d'entiers en entrée (set1 et set2), 
+identifie les éléments distincts de ces ensembles et calcule ensuite la somme de ces éléments distincts,
+ renvoyant ce total en sortie.

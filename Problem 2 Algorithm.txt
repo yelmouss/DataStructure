@@ -1,0 +1,82 @@
+//Problem 2 Algorithm (Determining Orthogonal Vectors Using Dot Product and Arrays):
+
+ALGORITHM isOrthogonal
+VARIABLES
+    vectors: ARRAY OF ARRAY OF INTEGER
+    orthogonal_status: ARRAY OF BOOLEAN
+
+FUNCTION dotProduct(vector1: ARRAY OF INTEGER, vector2: ARRAY OF INTEGER) RETURNS INTEGER
+VARIABLES
+    dot_product: INTEGER
+BEGIN
+    dot_product ← 0
+    
+    FOR i FROM 1 TO LENGTH(vector1) DO
+        dot_product ← dot_product + (vector1[i] * vector2[i])
+    END FOR
+    
+    RETURN dot_product
+END FUNCTION
+
+BEGIN
+    orthogonal_status ← []
+    
+    FOR i FROM 1 TO LENGTH(vectors) STEP 2 DO
+        vector1 ← vectors[i]
+        vector2 ← vectors[i + 1]
+        dot_product ← dotProduct(vector1, vector2)
+        
+        IF dot_product = 0 THEN
+            APPEND TRUE TO orthogonal_status  // Vectors are orthogonal
+        ELSE
+            APPEND FALSE TO orthogonal_status  // Vectors are not orthogonal
+        END IF
+    END FOR
+    
+    RETURN orthogonal_status
+END
+
+
+
+ALGORITHM isOrthogonal
+
+VARIABLES
+
+vectors: Un tableau de tableaux d'entiers représentant les vecteurs.
+orthogonal_status: Un tableau de booléens pour stocker l'état orthogonal des paires de vecteurs.
+FUNCTION dotProduct(vector1: ARRAY OF INTEGER, vector2: ARRAY OF INTEGER) RETURNS INTEGER
+
+VARIABLES
+dot_product: Un entier pour stocker le produit scalaire des deux vecteurs.
+BEGIN
+dot_product ← 0: Initialise le produit scalaire à zéro.
+FOR i FROM 1 TO LENGTH(vector1) DO
+dot_product ← dot_product + (vector1[i] * vector2[i]): Calcule le produit scalaire en multipliant les composants correspondants des deux vecteurs et en ajoutant le résultat au produit scalaire.
+END FOR
+RETURN dot_product: Renvoie le produit scalaire calculé.
+END FUNCTION
+BEGIN
+
+orthogonal_status ← []: Initialise le tableau de l'état orthogonal comme vide.
+
+FOR i FROM 1 TO LENGTH(vectors) STEP 2 DO
+
+vector1 ← vectors[i]: Sélectionne le premier vecteur de la paire.
+
+vector2 ← vectors[i + 1]: Sélectionne le deuxième vecteur de la paire.
+
+dot_product ← dotProduct(vector1, vector2): Calcule le produit scalaire des deux vecteurs en utilisant la fonction dotProduct.
+
+IF dot_product = 0 THEN
+
+APPEND TRUE TO orthogonal_status: Ajoute TRUE au tableau orthogonal_status si le produit scalaire est égal à zéro, ce qui signifie que les vecteurs sont orthogonaux.
+ELSE
+
+APPEND FALSE TO orthogonal_status: Ajoute FALSE au tableau orthogonal_status si le produit scalaire n'est pas égal à zéro, ce qui signifie que les vecteurs ne sont pas orthogonaux.
+END IF
+
+END FOR
+
+RETURN orthogonal_status: Renvoie le tableau orthogonal_status contenant l'état orthogonal des paires de vecteurs.
+
+END
